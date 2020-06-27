@@ -23,3 +23,16 @@ X_train = X_train.reset_index(drop = True)
 X_test = X_test.reset_index(drop=True)
 y_train = y_train.reset_index(drop = True)
 y_test = y_test.reset_index(drop=True)
+
+# As the scale in the column 54, 55 and 56 are different from others, so I need to change these to the same scale of [0,100]
+def Rescale_data(data):
+    return ((data - np.min(data)) / np.max(data))
+for a in [54,55,56]:
+    X_train[a] = 100 * Rescale_data(X_train[a])
+    X_test[a] = 100 * Rescale_data((X_test[a]))
+
+# Check the scale
+print(X_train.min(), X_train.max())
+print(X_test.min(), X_test.max())
+# After checking, all data are in the range of [0,100]
+
