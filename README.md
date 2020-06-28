@@ -1,21 +1,22 @@
 # MSA2020 - AI & Advanced Analytics (Spam emails detection)
 
 ## Table of Contents
-1. [Overview](#overview)
-2. [Features](#features)
-3. [Dependencies](#dependencies)
-4. [Running the project](#project)
-5. [Step by step instructions](#instructions)
-6. [Results](#results)
+====================
+* [Overview](#overview)
+* [Features](#features)
+* [Dependencies](#dependencies)
+* [Running the project](#project)
+* [Step by step instructions](#instructions)
+* [Results](#results)
 
-### 1. Overview
+### Overview
 In recent years, spam emails are increasing dramatically, so how to identify spam emails is crucial for programmers to solve, so I made this project by applying several different models.
 
-### 2. Features
+### Features
 * 4 machine learning models
 * Present plot of accuracy for different models
 
-### 3. Dependencies
+### Dependencies
 * python (3.8)
 * pandas
 * numpy
@@ -24,12 +25,12 @@ In recent years, spam emails are increasing dramatically, so how to identify spa
 * tensorflow
 * matplotlib
 
-### 4. Running the project
+### Running the project
 * Install all dependencies (if needed)
 * Check the local machine requirement to see if it is able to run some codes
 * Clone the repository then you can run in your own computer
 
-### 5. Step by step instructions
+### Step by step instructions
 - First: load the dataset files from the spambase/spambase.data
 - Second: check the integrity of the dataset
 - Third: split data for training and testing also rescale the data
@@ -37,6 +38,6 @@ In recent years, spam emails are increasing dramatically, so how to identify spa
 - Fifth: train and test neural network model
 - Sixth: print out result and show the accuracy of 4 models in the same bar chart
 
-### 6. Results
+### Results
 * https://github.com/SuperSimonC/MSA-AI/blob/master/result.pdf
 * From the chart in the website, it is obvious that the accuracy for SVM_linear and Neural Network are more than 90%, which performs better compare with other two.
