@@ -5,7 +5,7 @@
 2. [Features](#Features)
 3. [Dependencies](#Dependencies)
 4. [Running the project](#Running the project)
-5. [Step by step instructions](#Step by step instructions]
+5. [Step by step instructions](#Step by step instructions)
 6. [Results](#Results)
 
 ### 1. Overview
