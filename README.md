@@ -16,8 +16,11 @@ In recent years, spam emails are increasing dramatically, so how to identify spa
 * 4 machine learning models
 * Present plot of accuracy for different models
 
+### Environment setup
+* Download python 3.8 and install all dependencies
+* Download dataset from this website: https://archive.ics.uci.edu/ml/machine-learning-databases/spambase/
+
 ### Dependencies
-* python (3.8)
 * pandas
 * numpy
 * sklearn
