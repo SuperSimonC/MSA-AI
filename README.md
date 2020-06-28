@@ -6,8 +6,8 @@
 * [Features](#features)
 * [Environment setup](#environment-setup)
 * [Dependencies](#dependencies)
-* [Running the project](#project)
-* [Step by step instructions](#instructions)
+* [Running the project](#running-the-project)
+* [Step by step instructions](#step-by-step-instructions)
 * [Results](#results)
 
 ### Overview
