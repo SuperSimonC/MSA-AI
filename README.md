@@ -2,11 +2,11 @@
 
 ## Table of Contents
 1. [Overview](#Overview)
-2. [Features] (#Features)
-3. [Dependencies] (#Dependencies)
-4. [Running the project] (#Running the project)
-5. [Step by step instructions] (#Step by step instructions]
-6. [Results] (#Results)
+2. [Features](#Features)
+3. [Dependencies](#Dependencies)
+4. [Running the project](#Running the project)
+5. [Step by step instructions](#Step by step instructions]
+6. [Results](#Results)
 
 ### 1. Overview
 In recent years, spam emails are increasing dramatically, so how to identify spam emails is crucial for programmers to solve, so I made this project by applying several different models.
