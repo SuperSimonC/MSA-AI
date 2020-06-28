@@ -36,3 +36,31 @@ print(X_train.min(), X_train.max())
 print(X_test.min(), X_test.max())
 # After checking, all data are in the range of [0,100]
 
+from sklearn import svm
+
+# Evaluate the accuracy of SVM
+def evaluate_SVM(pred_data, real_data, name_data):
+    check_same = pred_data == real_data
+    accuracy = sum(check_same) / len(check_same) * 100
+    print(name_data, "Accuracy: ", accuracy, "%")
+
+def present_SVM(SVM_Model):
+    # Use the model to predict the training and test sets.
+    train_data = SVM_Model.predict(X_train.values)
+    test_data = SVM_Model.predict(X_test.values)
+
+    # Evaluate the model using the training and test sets
+    evaluate_SVM(train_data, y_train, 'Train')
+    evaluate_SVM(test_data, y_test, 'Test')
+
+# Linear model for SVM
+SVM_Model = svm.SVC(kernel = 'linear').fit(X_train, y_train)
+present_SVM(SVM_Model)
+
+# Sigmoid kernal for SVM
+SVM_Model = svm.SVC(kernel = 'sigmoid').fit(X_train, y_train)
+present_SVM(SVM_Model)
+
+# Polynomial kernal for SVM
+SVM_Model = svm.SVC(kernel = 'poly').fit(X_train, y_train)
+present_SVM(SVM_Model)
