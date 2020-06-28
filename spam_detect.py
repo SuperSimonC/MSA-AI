@@ -2,10 +2,10 @@ import pandas as pd
 import numpy as np
 
 
-# loading dataset files
+# Load dataset files
 dataset = pd.read_csv("spambase/spambase.data", header = None)
 
-# getting basic information of dataset
+# Get basic information of dataset
 print(dataset.head())
 print(dataset.shape)
 
@@ -81,11 +81,12 @@ result["Accuracy"].append(svm_poly_accuracy)
 
 
 from keras.utils import to_categorical
-# reformatting outputs to categorical values
+
+# Reformat outputs to categorical values
 y_train = to_categorical(y_train)
 y_test = to_categorical(y_test)
 
-# building neural network model
+# Build neural network model
 import tensorflow as tf
 import keras
 
