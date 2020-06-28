@@ -4,7 +4,7 @@
 ====================
 * [Overview](#overview)
 * [Features](#features)
-* [Environment setup](#environment setup)
+* [Environment setup](#environmentsetup)
 * [Dependencies](#dependencies)
 * [Running the project](#project)
 * [Step by step instructions](#instructions)
