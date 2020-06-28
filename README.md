@@ -1,12 +1,12 @@
 # MSA2020 - AI & Advanced Analytics (Spam emails detection)
 
 ## Table of Contents
-1. [Overview](#Overview)
-2. [Features](#Features)
-3. [Dependencies](#Dependencies)
-4. [Running the project](#Runningtheproject)
-5. [Step by step instructions](#Stepbystepinstructions)
-6. [Results](#Results)
+1. [Overview](#overview)
+2. [Features](#features)
+3. [Dependencies](#dependencies)
+4. [Running the project](#project)
+5. [Step by step instructions](#instructions)
+6. [Results](#results)
 
 ### 1. Overview
 In recent years, spam emails are increasing dramatically, so how to identify spam emails is crucial for programmers to solve, so I made this project by applying several different models.
