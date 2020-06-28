@@ -38,6 +38,11 @@ print(X_test.min(), X_test.max())
 
 from sklearn import svm
 
+result = {
+    'Model': [],
+    'Accuracy': []
+}
+
 # Evaluate the accuracy of SVM
 def evaluate_SVM(pred_data, real_data, name_data):
     check_same = pred_data == real_data
@@ -51,16 +56,73 @@ def present_SVM(SVM_Model):
 
     # Evaluate the model using the training and test sets
     evaluate_SVM(train_data, y_train, 'Train')
-    evaluate_SVM(test_data, y_test, 'Test')
+    return evaluate_SVM(test_data, y_test, 'Test')
 
 # Linear model for SVM
 SVM_Model = svm.SVC(kernel = 'linear').fit(X_train, y_train)
-present_SVM(SVM_Model)
+svm_linear_accuracy = present_SVM(SVM_Model)
+result['Model'].append("SVM_linear")
+result["Accuracy"].append(svm_linear_accuracy)
 
 # Sigmoid kernal for SVM
 SVM_Model = svm.SVC(kernel = 'sigmoid').fit(X_train, y_train)
-present_SVM(SVM_Model)
+svm_sigmoid_accuracy = present_SVM(SVM_Model)
+result['Model'].append("SVM_signmoid")
+result["Accuracy"].append(svm_sigmoid_accuracy)
 
 # Polynomial kernal for SVM
 SVM_Model = svm.SVC(kernel = 'poly').fit(X_train, y_train)
-present_SVM(SVM_Model)
+svm_poly_accuracy = present_SVM(SVM_Model)
+result['Model'].append("SVM_poly")
+result["Accuracy"].append(svm_poly_accuracy)
+
+
+
+from keras.utils import to_categorical
+# reformatting outputs to categorical values
+y_train = to_categorical(y_train)
+y_test = to_categorical(y_test)
+
+# building neural network model
+import tensorflow as tf
+import keras
+
+model = keras.models.Sequential()
+
+# Input layer & hidden layer
+model.add(keras.layers.Dense(units=24, input_dim = 57, activation = 'relu'))
+
+# Hidden layer
+model.add(keras.layers.Dense(units=24, activation = 'relu'))
+
+# Output layer
+model.add(keras.layers.Dense(units=2, activation = tf.nn.softmax))
+
+model.compile(loss = 'categorical_crossentropy', optimizer = 'sgd', metrics = ['accuracy'])
+
+# Fit the model
+print('Starting training')
+
+training_stats = model.fit(X_train, y_train, epochs = 10)
+
+print('Training finished')
+
+# Evaluation
+evaluation = model.evaluate(X_test, y_test, verbose=0)
+
+print('Test Set Evaluation: loss = %0.6f, accuracy = %0.2f%%' %(evaluation[0], 100 * evaluation[1]))
+
+# Add evaluation information in result dictionary
+result['Model'].append("Neural Network")
+result["Accuracy"].append(evaluation[1])
+
+# Print out result
+
+data = pd.DataFrame.from_dict(result)
+data.plot.bar(x = 'Model', y = 'Accuracy', rot = 20)
+
+# Save the plot
+import matplotlib.pyplot as plt
+
+plt.savefig("result.pdf")
+
