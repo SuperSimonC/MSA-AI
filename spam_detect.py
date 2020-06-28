@@ -48,7 +48,8 @@ def evaluate_SVM(pred_data, real_data, name_data):
     check_same = pred_data == real_data
     accuracy = sum(check_same) / len(check_same) * 100
     print(name_data, "Accuracy: ", accuracy, "%")
-    return accuracy
+    # To match the scale for ploting
+    return accuracy / 100
 
 def present_SVM(SVM_Model):
     # Use the model to predict the training and test sets.
